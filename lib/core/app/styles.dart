@@ -65,7 +65,7 @@ ThemeData _getTheme(ThemeData initialTheme) {
     labelStyle: textTheme.bodySmall!.copyWith(
       fontWeight: FontWeight.normal,
     ),
-    constraints: const BoxConstraints(maxHeight: 30),
+    // constraints: const BoxConstraints(maxHeight: 30),
   );
   return ThemeData(
       useMaterial3: initialTheme.useMaterial3,
@@ -186,6 +186,7 @@ ThemeData _getTheme(ThemeData initialTheme) {
           textStyle: buttonTextStyle,
         ),
       ),
+
       iconButtonTheme: IconButtonThemeData(
         style: IconButton.styleFrom(
           backgroundColor: background,

@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:expense_app/fetures/screens/login_screen.dart';
+import 'package:expense_app/fetures/screens/signup_screen.dart';
 import 'package:expense_app/fetures/screens/splash_screen.dart';
 import 'package:expense_app/fetures/screens/start_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +21,16 @@ mixin RouterMixin on State<MainApp> {
         name: 'Splash',
         builder: (context, state) => const StartScreen(),
       ),
-      // GoRoute(
-      //   path: AppRoute.buySellPortal.path,
-      //   name: 'Buy-Sell Portal',
-      //   builder: (context, state) => const BuySellPortalMain(),
-      // ),
+      GoRoute(
+        path: AppRoute.login.path,
+        name: 'Login',
+        builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        path: AppRoute.signup.path,
+        name: 'SignUp',
+        builder: (context, state) => const SignUpScreen(),
+      ),
       // GoRoute(
       //   path: AppRoute.salePortal.path,
       //   name: 'Sale Portal',
@@ -73,7 +80,7 @@ class GoRouterRefreshStream extends ChangeNotifier {
     notifyListeners();
     _subscription = stream.asBroadcastStream().listen(
           (dynamic _) => notifyListeners(),
-    );
+        );
   }
 
   late final StreamSubscription<dynamic> _subscription;

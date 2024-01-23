@@ -38,18 +38,20 @@ extension Context on BuildContext {
     return maxWidth > tabletScreenBreakpoint;
   }
 
-  bool get isMobileScreen =>
-      MediaQuery.of(this).size.width <= mobileScreenBreakpoint;
+  bool get isMobileScreen => MediaQuery.of(this).size.width <= mobileScreenBreakpoint;
 
   bool get isTabletScreen {
     final current = MediaQuery.of(this).size.width;
-    return current >= mobileScreenBreakpoint &&
-        current <= tabletScreenBreakpoint;
+    return current >= mobileScreenBreakpoint && current <= tabletScreenBreakpoint;
+  }
+
+  bool get isMobileAndTabletScreen {
+    final current = MediaQuery.of(this).size.width;
+    return current <= tabletScreenBreakpoint;
   }
 
   bool get isSmallDesktopScreen =>
-      MediaQuery.of(this).size.width <= smallDesktopScreenBreakpoint &&
-      MediaQuery.of(this).size.width > tabletScreenBreakpoint;
+      MediaQuery.of(this).size.width <= smallDesktopScreenBreakpoint && MediaQuery.of(this).size.width > tabletScreenBreakpoint;
 
   double get screenHeight => MediaQuery.of(this).size.height;
   double get screenWidth => MediaQuery.of(this).size.width;
