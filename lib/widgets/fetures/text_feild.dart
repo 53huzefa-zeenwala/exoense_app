@@ -65,6 +65,7 @@ class _CustomFieldState extends State<CustomField> {
         Directionality(
           textDirection: TextDirection.rtl,
           child: TextFormField(
+            textDirection: TextDirection.ltr,
             controller: _controller,
             onSaved: widget.onSaved,
             onChanged: widget.onChange,
@@ -74,7 +75,6 @@ class _CustomFieldState extends State<CustomField> {
             autofocus: widget.autoFocus,
             enableSuggestions: true,
             style: context.textTheme.titleMedium,
-            textDirection: TextDirection.ltr,
             decoration: InputDecoration(
               filled: false,
               enabledBorder: OutlineInputBorder(

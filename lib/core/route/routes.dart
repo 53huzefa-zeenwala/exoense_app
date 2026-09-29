@@ -5,6 +5,8 @@ enum AppRoute {
   login('/login'),
   signup('/signup'),
   splash('/splash'),
+  start('/start'),
+  profileForm('/profile-form'),
   buySellPortal('/buySellPortal'),
   salePortal('/salePortal'),
   futurePortal('/futurePortal');

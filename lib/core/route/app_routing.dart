@@ -13,12 +13,17 @@ import 'routes.dart';
 
 mixin RouterMixin on State<MainApp> {
   GoRouter router = GoRouter(
-    initialLocation: AppRoute.splash.path,
+    initialLocation: AppRoute.start.path,
     debugLogDiagnostics: true,
     routes: <GoRoute>[
       GoRoute(
         path: AppRoute.splash.path,
         name: 'Splash',
+        builder: (context, state) => const SplashScreen(),
+      ),
+      GoRoute(
+        path: AppRoute.start.path,
+        name: 'Start',
         builder: (context, state) => const StartScreen(),
       ),
       GoRoute(
